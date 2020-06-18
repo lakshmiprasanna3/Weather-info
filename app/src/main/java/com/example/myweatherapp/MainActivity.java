@@ -2,6 +2,7 @@ package com.example.myweatherapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     EditText city;
     TextView result;
     TextView temperature;
+    TextView feels_like;
     //https://api.openweathermap.org/data/2.5/weather?q=Jaipur&appid=17fdb77a3aff08add476987521034308
 
 
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         city = findViewById(R.id.getCity);
         result = findViewById(R.id.result);
         temperature = findViewById(R.id.temperature);
+        feels_like = findViewById(R.id.feelslike);
 
 
 
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                             JSONObject mainobj = response.getJSONObject("main");
                             String temp = String.valueOf(mainobj.getDouble("temp"));
                             String info = response.getString("weather");
-
+                            String feelslike = String.valueOf(mainobj.getDouble("feels_like"));
                             Log.i("INFO", "INFO: " + info);
                             JSONArray ar = response.getJSONArray("weather");
                             for(int i=0 ; i < ar.length() ; i++){
@@ -72,20 +75,25 @@ public class MainActivity extends AppCompatActivity {
                                 result.setText(myWeather);
 
 
+
+
                                 Log.i("ID", "ID: " + parObj.getString("id"));
                                 Log.i("MAIN", "MAIN: " + parObj.getString("main"));
                             }
-//                                double temp_int = Double.parseDouble(temp);
-//                                double centi = (temp_int-32)/1.800;
-//                                centi = Math.round(centi);
-//                                int j = (int)centi;
-                                  double cons = 274.15;
+//
+                                  double cons = 273.15;
                                 double temp_cel = Double.parseDouble(temp);
                                 double centi = (temp_cel - cons);
                             centi = Math.round(centi);
                              int j = (int)centi;
+                            double cons1 = 273.15;
+                            double temp_cel1 = Double.parseDouble(feelslike);
+                            double centi1 = (temp_cel1 - cons1);
+                            centi1 = Math.round(centi1);
+                            int k = (int)centi1;
 
                                 temperature.setText(String.valueOf(j)+"°C");
+                                feels_like.setText("Feels Like "+String.valueOf(k)+"°C");
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -107,8 +115,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     }
+
+
+
+
 
 
 }
