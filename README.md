@@ -11,3 +11,8 @@ This is a  Weather Android application in Android Studio made using Java. The ma
 
 
 ![Screenshot_20200906_115942](https://user-images.githubusercontent.com/45752419/92319738-08395a80-f039-11ea-940b-6a3ebd82abcd.png)
+
+
+app icon:
+![IMG_20200906_120738](https://user-images.githubusercontent.com/45752419/92319843-12a82400-f03a-11ea-8f6d-9cdcf457b761.JPG)
+
