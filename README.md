@@ -5,6 +5,6 @@ This is a  Weather Android application in Android Studio made using Java. The ma
 
 
 
-![Screenshot_20200618_215707](https://user-images.githubusercontent.com/45752419/92316607-3bb5be00-f014-11ea-982b-59c41a1e8db1.png)
+![Screenshot_20200618_215600](https://user-images.githubusercontent.com/45752419/92316984-08c1f900-f019-11ea-9cdd-3c5ded98fef3.png)
 
 
